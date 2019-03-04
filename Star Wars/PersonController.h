@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@class Person; //Forward declaration to use Person here. Can also #import Person.h
+// In order to use Person here. Can also use Forward declaration @class Person;
+#import "Person.h"
+
 
 //Typealias called PersonCompletion, of completion closure that expects either a Person or an Error. Addition of _Nullable allows for nil value for each.
 typedef void(^PersonCompletion)(Person * _Nullable, NSError * _Nullable);

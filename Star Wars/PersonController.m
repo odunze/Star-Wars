@@ -46,8 +46,10 @@ NSMutableArray *_savedPeople;
     urlComponents.host = @"swapi.co"; //Set the host
     urlComponents.path = @"/api/people/"; //Set the path
     
+    //Creat an instance of NSURLQueryItem called search with search values - term.
     NSURLQueryItem *search = [NSURLQueryItem queryItemWithName: @"search" value: term];
     
+    //Assign the contents of search above to the query items of the URL.
     urlComponents.queryItems = @[ search ];
     
     //Set instance of NSURL called url to assembled components in urlComponents
@@ -65,8 +67,78 @@ NSMutableArray *_savedPeople;
 
 - (void) processResponse: (NSData *)data error: (NSError *)error completion: (PersonCompletion)completion {
     //When the Data Task Completes:
-    //Check for errors
+    
+    //Create an error in case decoding fails
+    NSError *decodingError = nil;
+    
     //Try to decode the JSON
+    id decodedObject = [NSJSONSerialization JSONObjectWithData: data options: 0 error: &decodingError];
+    
+    //What happens if something goes wrong decoding.
+    if (decodingError != nil) {
+        NSLog(@"Error decoding JSON: %@", decodingError);
+        completion(nil, decodingError);
+        return;
+    }
+    
+    //What happens if JSON result doesn't come back as a dictionary.
+    if ([decodedObject isKindOfClass:[NSDictionary class]] == NO) {
+        NSLog(@"JSON result is not a dictionary");
+        completion(nil, nil);
+        return;
+    }
+    
+    //Declare an array called results to hold the retrieved JSON
+    NSArray *results = [decodedObject objectForKey: @"results"];
+    
+    //What happens if there's no information under the results key in the JSON.
+    if ([results isKindOfClass: [NSArray class]] == NO) {
+        NSLog(@"JSON doesn't have a results array");
+        completion(nil, nil);
+        return;
+    }
+    
+    //Set results to be first object in the JSON dictionary i.e. first Person.
+    NSDictionary *firstResult = [results firstObject];
+    
+    //Error if there's no information under first result.
+    if ([firstResult isKindOfClass: [NSDictionary class]] == NO) {
+        NSLog(@"First JSON result is not a dictionary");
+        completion(nil, nil);
+        return;
+    }
+    
+    //Create an instance of Person using the info from the first result in JSON
+    Person *person = [[Person alloc] init];
+    person.name = [firstResult objectForKey: @"name"];
+    person.birthYear = [firstResult objectForKey: @"birth_year"];
+    person.hairColor = [firstResult objectForKey: @"hair_color"];
+    
+    //Convert height and mass which are primitives to strings
+    NSString *heightString = [firstResult objectForKey: @"height"];
+    NSString *massString = [firstResult objectForKey: @"mass"];
+    
+    person.height = [heightString integerValue];
+    person.mass = [massString integerValue];
+    
+    //Convert homeworld which is a URL to string
+    NSString *homeworldString = [firstResult objectForKey:@"homeworld"];
+    person.homeworld = [NSURL URLWithString:homeworldString];
+    
+    //Put all the films for each person JSON result in an array.
+    NSArray *filmStrings = [firstResult objectForKey:@"films"];
+    
+    //Create an array to hold the film urls after building below.
+    NSMutableArray *filmURLS = [NSMutableArray array];
+    
+    for (NSString *filmString in filmStrings) {
+        //Convert each film string into a film url.
+        NSURL *filmURL = [NSURL URLWithString: filmString];
+        //Append the film url to the array
+        [filmURLS addObject:filmURL];
+    }
+
+    
     //Report back via the Completion Handler
     
     //What happens if there's an error.
