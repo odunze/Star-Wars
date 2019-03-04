@@ -46,7 +46,7 @@ NSMutableArray *_savedPeople;
     urlComponents.host = @"swapi.co"; //Set the host
     urlComponents.path = @"/api/people/"; //Set the path
     
-    //Creat an instance of NSURLQueryItem called search with search values - term.
+    //Creat an instance of NSURLQueryItem called search with search value term above
     NSURLQueryItem *search = [NSURLQueryItem queryItemWithName: @"search" value: term];
     
     //Assign the contents of search above to the query items of the URL.

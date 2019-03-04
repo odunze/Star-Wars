@@ -8,21 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		4C747EAB222B8AB5004DAD32 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C747EAA222B8AB5004DAD32 /* AppDelegate.m */; };
-		4C747EAE222B8AB5004DAD32 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C747EAD222B8AB5004DAD32 /* ViewController.m */; };
 		4C747EB1222B8AB5004DAD32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C747EAF222B8AB5004DAD32 /* Main.storyboard */; };
 		4C747EB3222B8AB6004DAD32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C747EB2222B8AB6004DAD32 /* Assets.xcassets */; };
 		4C747EB6222B8AB6004DAD32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C747EB4222B8AB6004DAD32 /* LaunchScreen.storyboard */; };
 		4C747EB9222B8AB6004DAD32 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C747EB8222B8AB6004DAD32 /* main.m */; };
 		4C747EC1222B8B38004DAD32 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C747EC0222B8B38004DAD32 /* Person.m */; };
 		4C747EC4222B8D1D004DAD32 /* PersonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C747EC3222B8D1D004DAD32 /* PersonController.m */; };
+		4C747EC8222D06C3004DAD32 /* SavedPersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C747EC7222D06C3004DAD32 /* SavedPersonViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4C747EA6222B8AB5004DAD32 /* Star Wars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Star Wars.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C747EA9222B8AB5004DAD32 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4C747EAA222B8AB5004DAD32 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		4C747EAC222B8AB5004DAD32 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		4C747EAD222B8AB5004DAD32 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		4C747EB0222B8AB5004DAD32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4C747EB2222B8AB6004DAD32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C747EB5222B8AB6004DAD32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -32,6 +30,8 @@
 		4C747EC0222B8B38004DAD32 /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		4C747EC2222B8D1D004DAD32 /* PersonController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonController.h; sourceTree = "<group>"; };
 		4C747EC3222B8D1D004DAD32 /* PersonController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonController.m; sourceTree = "<group>"; };
+		4C747EC6222D06C3004DAD32 /* SavedPersonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SavedPersonViewController.h; sourceTree = "<group>"; };
+		4C747EC7222D06C3004DAD32 /* SavedPersonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SavedPersonViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,12 +66,8 @@
 			children = (
 				4C747EA9222B8AB5004DAD32 /* AppDelegate.h */,
 				4C747EAA222B8AB5004DAD32 /* AppDelegate.m */,
-				4C747EBF222B8B38004DAD32 /* Person.h */,
-				4C747EC0222B8B38004DAD32 /* Person.m */,
-				4C747EC2222B8D1D004DAD32 /* PersonController.h */,
-				4C747EC3222B8D1D004DAD32 /* PersonController.m */,
-				4C747EAC222B8AB5004DAD32 /* ViewController.h */,
-				4C747EAD222B8AB5004DAD32 /* ViewController.m */,
+				4C747EC5222D0683004DAD32 /* Model Manager */,
+				4C747EC9222D06CD004DAD32 /* View Controllers */,
 				4C747EAF222B8AB5004DAD32 /* Main.storyboard */,
 				4C747EB2222B8AB6004DAD32 /* Assets.xcassets */,
 				4C747EB4222B8AB6004DAD32 /* LaunchScreen.storyboard */,
@@ -79,6 +75,26 @@
 				4C747EB8222B8AB6004DAD32 /* main.m */,
 			);
 			path = "Star Wars";
+			sourceTree = "<group>";
+		};
+		4C747EC5222D0683004DAD32 /* Model Manager */ = {
+			isa = PBXGroup;
+			children = (
+				4C747EBF222B8B38004DAD32 /* Person.h */,
+				4C747EC0222B8B38004DAD32 /* Person.m */,
+				4C747EC2222B8D1D004DAD32 /* PersonController.h */,
+				4C747EC3222B8D1D004DAD32 /* PersonController.m */,
+			);
+			path = "Model Manager";
+			sourceTree = "<group>";
+		};
+		4C747EC9222D06CD004DAD32 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4C747EC6222D06C3004DAD32 /* SavedPersonViewController.h */,
+				4C747EC7222D06C3004DAD32 /* SavedPersonViewController.m */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,9 +167,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C747EAE222B8AB5004DAD32 /* ViewController.m in Sources */,
 				4C747EB9222B8AB6004DAD32 /* main.m in Sources */,
 				4C747EC4222B8D1D004DAD32 /* PersonController.m in Sources */,
+				4C747EC8222D06C3004DAD32 /* SavedPersonViewController.m in Sources */,
 				4C747EC1222B8B38004DAD32 /* Person.m in Sources */,
 				4C747EAB222B8AB5004DAD32 /* AppDelegate.m in Sources */,
 			);
