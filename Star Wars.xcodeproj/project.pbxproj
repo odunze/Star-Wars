@@ -14,7 +14,8 @@
 		4C747EB9222B8AB6004DAD32 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C747EB8222B8AB6004DAD32 /* main.m */; };
 		4C747EC1222B8B38004DAD32 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C747EC0222B8B38004DAD32 /* Person.m */; };
 		4C747EC4222B8D1D004DAD32 /* PersonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C747EC3222B8D1D004DAD32 /* PersonController.m */; };
-		4C747EC8222D06C3004DAD32 /* SavedPersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C747EC7222D06C3004DAD32 /* SavedPersonViewController.m */; };
+		4C747EC8222D06C3004DAD32 /* SavedPersonListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C747EC7222D06C3004DAD32 /* SavedPersonListController.m */; };
+		4CEC4680222DCEE8000BEB83 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEC467F222DCEE8000BEB83 /* DetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,8 +31,10 @@
 		4C747EC0222B8B38004DAD32 /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		4C747EC2222B8D1D004DAD32 /* PersonController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonController.h; sourceTree = "<group>"; };
 		4C747EC3222B8D1D004DAD32 /* PersonController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonController.m; sourceTree = "<group>"; };
-		4C747EC6222D06C3004DAD32 /* SavedPersonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SavedPersonViewController.h; sourceTree = "<group>"; };
-		4C747EC7222D06C3004DAD32 /* SavedPersonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SavedPersonViewController.m; sourceTree = "<group>"; };
+		4C747EC6222D06C3004DAD32 /* SavedPersonListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SavedPersonListController.h; sourceTree = "<group>"; };
+		4C747EC7222D06C3004DAD32 /* SavedPersonListController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SavedPersonListController.m; sourceTree = "<group>"; };
+		4CEC467E222DCEE8000BEB83 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		4CEC467F222DCEE8000BEB83 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,8 +94,10 @@
 		4C747EC9222D06CD004DAD32 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				4C747EC6222D06C3004DAD32 /* SavedPersonViewController.h */,
-				4C747EC7222D06C3004DAD32 /* SavedPersonViewController.m */,
+				4C747EC6222D06C3004DAD32 /* SavedPersonListController.h */,
+				4C747EC7222D06C3004DAD32 /* SavedPersonListController.m */,
+				4CEC467E222DCEE8000BEB83 /* DetailViewController.h */,
+				4CEC467F222DCEE8000BEB83 /* DetailViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -169,9 +174,10 @@
 			files = (
 				4C747EB9222B8AB6004DAD32 /* main.m in Sources */,
 				4C747EC4222B8D1D004DAD32 /* PersonController.m in Sources */,
-				4C747EC8222D06C3004DAD32 /* SavedPersonViewController.m in Sources */,
+				4C747EC8222D06C3004DAD32 /* SavedPersonListController.m in Sources */,
 				4C747EC1222B8B38004DAD32 /* Person.m in Sources */,
 				4C747EAB222B8AB5004DAD32 /* AppDelegate.m in Sources */,
+				4CEC4680222DCEE8000BEB83 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

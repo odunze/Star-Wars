@@ -1,24 +1,23 @@
 //
-//  SavedPersonViewController.m
+//  SavedPersonListController.m
 //  Star Wars
 //
 //  Created by Lotanna Igwe-Odunze on 3/4/19.
 //  Copyright © 2019 Lotanna Igwe-Odunze. All rights reserved.
 //
 
-#import "SavedPersonViewController.h"
+#import "SavedPersonListController.h"
 #import "PersonController.h" //Import Person Controller so I can refer to it.
 #import "DetailViewController.h"
-#import "SearchViewController.h"
 
-@interface SavedPersonViewController ()
+@interface SavedPersonListController ()
 
 //Assign instance of Person Controller to property
 @property (nonatomic, readonly)PersonController *personController;
 
 @end
 
-@implementation SavedPersonViewController
+@implementation SavedPersonListController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -87,15 +86,28 @@
     
     if ([segue.identifier isEqual:@"viewSegue"]) {
         
-        DetailViewController *dvc = segue destinationViewController;
+        //Assign the segue destination view controller to a property
+        DetailViewController *dvc = segue.destinationViewController;
         
+        //Create an instance of the index path of the row.
+        NSIndexPath *selectedRow = self.tableView.indexPathForSelectedRow;
         
+        //Isolate the row number
+        NSInteger row = selectedRow.row; //Don't use pointer * here.
+        
+        //Retrieve the instance of Person at the row index in the array
+        Person *person = [self.personController.savedPeople objectAtIndex:row];
+        
+        dvc.person = person;
+        dvc.personController = self.personController;
         
     } else if ([segue.identifier isEqualToString:@"searchSegue"]){
         
+        DetailViewController *dvc = segue.destinationViewController;
+        
+        dvc.personController = self.personController;
+        
     }
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
 }
 
 

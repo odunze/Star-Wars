@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="DetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -53,6 +53,9 @@
                                         <rect key="frame" x="93.5" y="123.5" width="108" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Save Person"/>
+                                        <connections>
+                                            <action selector="savePerson:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nsd-hb-7QC"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -68,6 +71,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="birthYearLabel" destination="fZ0-CA-Msh" id="Mc2-J1-SO0"/>
+                        <outlet property="heightLabel" destination="b5H-Nf-xlR" id="ev9-Go-lQN"/>
+                        <outlet property="massLabel" destination="fRr-q1-qo3" id="Z5d-NI-rb0"/>
+                        <outlet property="nameLabel" destination="80Q-I2-pJg" id="FqO-P8-qzc"/>
+                        <outlet property="savePersonButton" destination="Zna-Yt-2D8" id="GNT-6t-ttz"/>
+                        <outlet property="searchBar" destination="4Ig-FT-rRc" id="mS3-1J-V0X"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -76,7 +87,7 @@
         <!--Star Wars-->
         <scene sceneID="yuH-sg-1bt">
             <objects>
-                <tableViewController id="K1M-Lr-cZu" sceneMemberID="viewController">
+                <tableViewController id="K1M-Lr-cZu" customClass="SavedPersonListController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="T9j-ho-MeZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SavedPersonViewController : UITableViewController
+@interface SavedPersonListController : UITableViewController
 
 @end
 
