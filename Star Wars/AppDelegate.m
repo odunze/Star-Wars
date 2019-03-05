@@ -7,16 +7,26 @@
 //
 
 #import "AppDelegate.h"
+#import "PersonController.h"
 
 @interface AppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation AppDelegate {
+    PersonController *_personController;
+}
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    _personController = [[PersonController alloc] init];
+    [_personController searchForPeopleMatchingTerm:@"kywal" completion:^(Person * _Nullable person, NSError * _Nullable error) {
+        NSLog(@"Got error: %@", error);
+        NSLog(@"Got person: %@", person);
+    }];
+    
     return YES;
 }
 

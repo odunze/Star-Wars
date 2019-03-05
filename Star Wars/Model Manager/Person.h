@@ -15,10 +15,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *hairColor;
 @property (nonatomic, copy) NSString *birthYear;
-@property (nonatomic, copy) NSString *homeworld;
+@property (nonatomic, copy) NSURL *homeworld;
+@property (nonatomic, copy) NSArray *films;
+
 @property (nonatomic) NSInteger height;
 @property (nonatomic) NSInteger mass;
-
 
 @end
 

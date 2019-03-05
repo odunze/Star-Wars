@@ -7,18 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Person.h"
 #import "PersonController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface DetailViewController : UIViewController
 
-//Person property to receive index path and build details
+//Declare properties the view controller needs. A person, and a person controller.
 @property (nonatomic, strong, nullable) Person *person;
-@property (nonatomic, strong, nullable) PersonController * personController;
 
-
+@property (nonatomic, strong) PersonController *personController;
 
 @end
 
